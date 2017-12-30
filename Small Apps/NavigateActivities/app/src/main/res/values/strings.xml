@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NavigateActivities</string>
+    <string name="go_to">SHOW THE NEXT ACTIVITY</string>
+</resources>
