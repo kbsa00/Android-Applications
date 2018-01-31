@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <string name="headlineText">Headline Fragment</string>
+    <string name="article_fragmentText">Article Fragment</string>
+</resources>
