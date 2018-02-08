@@ -15,13 +15,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+
+/**
+ * This writes a file internally on the Phone!
+ * NOTICE - If you want to save a file on a external storage, You will have
+ * to put permission requests in the manifest.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private EditText inputTxt;
     private Button saveButton;
     private Button loadButton;
     private TextView resultTxt;
-    private String pathname = "hello_file";
+
+    //Filename of the textfile.
+    private String fileName = "hello_file.txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,27 +44,43 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Saving the input from the application on a text file internally.
+     */
 
     public void saveMessage(View view){
         String message = inputTxt.getText().toString();
 
+        FileOutputStream fileOutputStream = null;
 
         try {
-            FileOutputStream fileOutputStream = openFileOutput(pathname, MODE_PRIVATE);
+            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
             fileOutputStream.write(message.getBytes());
             Toast.makeText(this, "Message Saved", Toast.LENGTH_LONG).show();
 
+            fileOutputStream.flush();
+            fileOutputStream.close();
+
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            if (fileOutputStream != null){
+                fileOutputStream = null;
+            }
         }
 
     }
 
+    /**
+     * Reading from a file and presenting on the application
+     */
     public void loadMessage(View view){
+
+        FileInputStream fileInputStream = null;
         try {
 
             String message;
-            FileInputStream fileInputStream = openFileInput(pathname);
+            fileInputStream = openFileInput(fileName);
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuffer stringBuffer = new StringBuffer();
@@ -65,12 +89,18 @@ public class MainActivity extends AppCompatActivity {
                 stringBuffer.append(message + "\n");
             }
 
+            Toast.makeText(getApplicationContext(), "Loaded TextFile", Toast.LENGTH_LONG).show();
             resultTxt.setText(stringBuffer.toString());
+            fileInputStream.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        finally {
+            if (fileInputStream != null){
+                fileInputStream = null;
+            }
+        }
     }
 
 }
