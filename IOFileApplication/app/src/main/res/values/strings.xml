@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">IOFileApplication</string>
+    <string name="hint_txt">Enter a message</string>
+    <string name="btnsavetxt">Save</string>
+    <string name="btnLoadtxt">Load</string>
+</resources>
