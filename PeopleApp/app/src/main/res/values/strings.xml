@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PeopleApp</string>
+    <string name="numHintTxt">Enter your age</string>
+    <string name="namehinttxt">Enter your name</string>
+    <string name="buttontext">Send</string>
+    <string name="dbtextView">Persons: </string>
+</resources>
