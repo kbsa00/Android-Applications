@@ -8,6 +8,25 @@
     tools:context="com.example.eier.peopleapp.MainActivity">
 
     <EditText
+        android:id="@+id/inputAdress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/enter_adress_hintTxt"
+        android:inputType="textPostalAddress"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Inputage"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
         android:id="@+id/Inputage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

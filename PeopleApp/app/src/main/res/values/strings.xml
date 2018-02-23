@@ -4,4 +4,5 @@
     <string name="namehinttxt">Enter your name</string>
     <string name="buttontext">Send</string>
     <string name="dbtextView">Persons: </string>
+    <string name="enter_adress_hintTxt">Enter your Adress</string>
 </resources>

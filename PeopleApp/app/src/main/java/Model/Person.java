@@ -8,6 +8,8 @@ public class Person {
     private int personAge;
     private String personName;
     private int persId;
+    private String persAdress;
+
 
     public Person(int personAge, String personName, int persId) {
         this.personAge = personAge;
@@ -18,6 +20,10 @@ public class Person {
     public Person(){
 
     }
+
+    public String getPersAdress() {return persAdress;}
+
+    public void setPersAdress(String persAdress) {this.persAdress = persAdress;}
 
     public int getPersonAge() {
         return personAge;

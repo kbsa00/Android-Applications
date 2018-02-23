@@ -8,11 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.example.eier.peopleapp.R;
-
 import java.util.ArrayList;
-
 import Model.Person;
 
 /**
@@ -60,6 +57,7 @@ public class CustomListViewAdapter extends ArrayAdapter<Person> {
 
            holder.name = (TextView) row.findViewById(R.id.listvName);
            holder.age = (TextView) row.findViewById(R.id.listvAge);
+           holder.adress = (TextView) row.findViewById(R.id.listvAdress);
 
            row.setTag(holder);
 
@@ -71,15 +69,15 @@ public class CustomListViewAdapter extends ArrayAdapter<Person> {
        holder.person = getItem(position);
        holder.name.setText(holder.person.getPersonName());
        holder.age.setText(String.valueOf(holder.person.getPersonAge()));
+       holder.adress.setText(holder.person.getPersAdress());
 
        return row;
     }
 
-
-
     public class ViewHolder{
         TextView name;
         TextView age;
+        TextView adress;
         Person person;
     }
 }

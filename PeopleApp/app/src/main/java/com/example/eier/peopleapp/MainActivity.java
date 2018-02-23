@@ -9,14 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
 import Data.DatabaseHandler;
 import Model.Person;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText nameInput, ageInput;
+    private EditText nameInput, ageInput, adressInput;
     private Button sendButton;
     private DatabaseHandler dba;
 
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         nameInput = (EditText) findViewById(R.id.inputName);
         ageInput = (EditText) findViewById(R.id.Inputage);
         sendButton = (Button) findViewById(R.id.sendbtn);
+        adressInput = (EditText) findViewById(R.id.inputAdress);
     }
 
     public void sendInformation(View view){
@@ -37,20 +36,25 @@ public class MainActivity extends AppCompatActivity {
 
         String name = nameInput.getText().toString().trim();
         String age = ageInput.getText().toString().trim();
+        String adress = adressInput.getText().toString().trim();
+
 
         int pAge = Integer.parseInt(age);
 
-        if (name.equals("") || age.equals("")){
+        if (name.equals("") || age.equals("") || adress.equals("")){
 
             Toast.makeText(this, "No empty fields please", Toast.LENGTH_LONG).show();
         }else {
 
             person.setPersonName(name);
             person.setPersonAge(pAge);
+            person.setPersAdress(adress);
             dba.addPerson(person);
             dba.close();
             nameInput.setText("");
             ageInput.setText("");
+            adressInput.setText("");
+
             Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -62,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             },1000);
         }
-
-
 
     }
 }

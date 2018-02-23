@@ -10,5 +10,6 @@ public class Constants {
     public static final String TABLE_NAME = "person_tbl";
     public static final String PERSON_NAME = "persname";
     public static final String PERSON_AGE = "persage";
+    public static final String PERSON_ADRESS= "persAdress";
     public static final String KEY_ID = "persid";
 }

@@ -27,7 +27,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TABLE = "CREATE TABLE " + Constants.TABLE_NAME + "(" +
                 Constants.KEY_ID + " INTEGER PRIMARY KEY, " + Constants.PERSON_NAME +
-                " TEXT,  " + Constants.PERSON_AGE + " INT);";
+                " TEXT,  " + Constants.PERSON_ADRESS + " TEXT, " + Constants.PERSON_AGE + " INT);";
 
         db.execSQL(CREATE_TABLE);
     }
@@ -46,10 +46,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         values.put(Constants.PERSON_NAME, person.getPersonName());
         values.put(Constants.PERSON_AGE, person.getPersonAge());
+        values.put(Constants.PERSON_ADRESS, person.getPersAdress());
 
         db.insert(Constants.TABLE_NAME, null, values);
         db.close();
-
     }
 
 
@@ -67,7 +67,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 person.setPersonName(cursor.getString(cursor.getColumnIndex(Constants.PERSON_NAME)));
                 person.setPersonAge(cursor.getInt(cursor.getColumnIndex(Constants.PERSON_AGE)));
                 person.setPersId(cursor.getInt(cursor.getColumnIndex(Constants.KEY_ID)));
-
+                person.setPersAdress(cursor.getString(cursor.getColumnIndex(Constants.PERSON_ADRESS)));
                 listOfPerson.add(person);
 
             }while (cursor.moveToNext());
