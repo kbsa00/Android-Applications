@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CalcsFileIO</string>
+    <string name="plustxt">+</string>
+    <string name="minusTxt">-</string>
+    <string name="timesTxt">*</string>
+    <string name="divideTxt">÷</string>
+    <string name="edit2_hintTxt">Enter Second Number</string>
+    <string name="edit1_hintTxt">Enter First Number</string>
+</resources>
