@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RoomApp</string>
+    <string name="nametxt">Your List</string>
+    <string name="show_input">Show text</string>
+    <string name="hide_text">Hide Input</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="namehinttxt">Enter your name</string>
+    <string name="hintAgetxt">Enter your age</string>
+</resources>
